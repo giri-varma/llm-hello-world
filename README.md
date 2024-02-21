@@ -1,10 +1,11 @@
 # llm-hello-world
 
 ## Pre-requisites
-Install python3.9 and pip before setting up the project-specific dependencies.
-```shell
-/usr/bin/pip3 install --user PyPDF2 sentence_transformers faiss-cpu gpt4all
-```
+1. Install python3.9 and pip before setting up the project-specific dependencies.
+2. Install [langchain](https://python.langchain.com/docs/get_started/installation) LLM framework.
+    ```shell
+    /usr/bin/pip3 install --user gpt4all langchain 
+    ```
 
 ## Basic
 Simple AI chat bot.
