@@ -2,9 +2,17 @@
 
 ## Pre-requisites
 1. Install python3.9+ and pip before setting up the project-specific dependencies.
-2. Install [langchain](https://python.langchain.com/docs/get_started/installation) LLM framework.
+2. Install all requirements.
     ```shell
-    /usr/bin/pip3 install --user gpt4all langchain langchain-openai beautifulsoup chromadb faiss-cpu langchainhub
+    /usr/bin/pip3 install --user gpt4all langchain langchain-openai beautifulsoup4 chromadb faiss-cpu langchainhub gradio pypdf sentence-transformers text-generation
+    ```
+3. Run HuggingFace Text Generation Inference server locally.
+    ```shell
+    mkdir -p $HOME/huggingface/data
+    model="meta-llama/Llama-2-7b-chat-hf"
+    volume="$HOME/huggingface/data"
+    token="<Your own HF token>"
+    docker run --gpus all --shm-size 1g -e HUGGING_FACE_HUB_TOKEN=$token -p 8080:80 -v $volume:/data ghcr.io/huggingface/text-generation-inference:1.1.0 --model-id $model
     ```
 
 ## Chat 1
